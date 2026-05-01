@@ -1,2 +1,2 @@
-# claude
-claude certification self learning notes.
+# delivery-pilot-template
+Template project to load the delivery pilot
