@@ -82,6 +82,10 @@ delivery-pilot-template/
 - Use emojis (✨, 🛠, 🧪, 🐛) for scannability
 - Leverage Gemini's multimodal capabilities for image analysis in `3_Simulation`
 
+### Agent Skills
+- Project-specific Agent Skills are stored in `.gemini/skills/`.
+- Refer to these skills for standardizing markdown formats, commit messages, and project structure logic.
+- When creating a new workflow that needs to be repeated, define it as a new skill under this directory.
 ### Code Standards
 - Use modern CSS (Flexbox/Grid) for responsive design
 - Implement PrismJS for syntax highlighting in `5_Symbols`
