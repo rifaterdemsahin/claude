@@ -14,4 +14,5 @@ The goal is to master the Anthropic Claude stack and achieve the Claude Certifie
 - **Objective 1:** Implement all 5 production systems.
   - *Key Result:* 5 working code repositories/modules demonstrating each system.
 - **Objective 2:** Obtain the Claude Certified Architect certification.
-  - *Key Result:* Pass the certification exam.
+  - *Key Result:* Watch and complete the official Anthropic Academy modules, specifically completing the "Introduction to agent skills" course (learning how to build, configure, and share reusable markdown Skills in Claude Code).
+  - *Key Result:* Pass the certification exam to earn the official certificate.
