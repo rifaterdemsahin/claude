@@ -11,6 +11,7 @@
   "contentMenu": [
     { "title": "Project Goals", "path": "1_Real_Unknown/curriculum_goals.md" },
     { "title": "Environment Setup", "path": "2_Environment/setup.md" },
-    { "title": "Learning Path", "path": "4_Formula/learning_path.md" }
+    { "title": "Learning Path", "path": "4_Formula/learning_path.md" },
+    { "title": "Claude Skills", "path": "4_Formula/claude_skills.md" }
   ]
 }
