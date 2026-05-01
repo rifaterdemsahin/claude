@@ -1,0 +1,16 @@
+{
+  "mainMenu": [
+    { "title": "1. Real Unknown", "path": "1_Real_Unknown" },
+    { "title": "2. Environment", "path": "2_Environment" },
+    { "title": "3. Simulation", "path": "3_Simulation" },
+    { "title": "4. Formula", "path": "4_Formula" },
+    { "title": "5. Symbols", "path": "5_Symbols" },
+    { "title": "6. Semblance", "path": "6_Semblance" },
+    { "title": "7. Testing Known", "path": "7_Testing_Known" }
+  ],
+  "contentMenu": [
+    { "title": "Project Goals", "path": "1_Real_Unknown/curriculum_goals.md" },
+    { "title": "Environment Setup", "path": "2_Environment/setup.md" },
+    { "title": "Learning Path", "path": "4_Formula/learning_path.md" }
+  ]
+}

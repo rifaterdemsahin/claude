@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Certified Architect - Delivery Pilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --secondary-bg: #1e293b;
+            --border-color: #334155;
+            --card-hover: #2dd4bf;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+        .search-bar {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            outline: none;
+        }
+        .search-bar:focus {
+            border-color: var(--accent-color);
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--secondary-bg) 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--card-hover);
+        }
+        .container {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-hover);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+        .social-links a {
+            color: var(--accent-color);
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        #debug-menu {
+            display: none;
+            background-color: #fbbf24;
+            color: #000;
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+        .debug-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .debug-btn:hover {
+            background: var(--border-color);
+        }
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            nav.active {
+                display: flex;
+            }
+            .mobile-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5rem;
+            }
+            header {
+                flex-wrap: wrap;
+            }
+        }
+        .mobile-toggle { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="debug-menu">🐛 Debug Mode Enabled: All 7 stages visible</div>
+
+    <header>
+        <a href="index.html" class="logo">✨ Claude Architect</a>
+        <div class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+        <nav id="main-nav">
+            <input type="text" class="search-bar" id="search-input" placeholder="Search autocomplete..." onkeyup="handleSearch()">
+            <div id="dynamic-menu" style="display:flex; gap:1.5rem;"></div>
+            <button class="debug-btn" onclick="toggleDebug()">Toggle Debug</button>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Transform Unknowns to Proven Solutions</h1>
+        <p>Follow the 7-stage self-learning framework to master the Claude AI stack.</p>
+    </div>
+
+    <div class="container">
+        <h2>Explore Content</h2>
+        <div class="grid" id="content-grid">
+            <!-- Populated via JS -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/rifaterdemsahin/claude" target="_blank">GitHub Repository</a> | 
+            <a href="https://www.linkedin.com/in/rifaterdemsahin/" target="_blank">LinkedIn 🔗</a> | 
+            <a href="https://www.youtube.com/@RifatErdemSahin" target="_blank">YouTube 📺</a>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">Built for Project Self-Learning System v0.9</p>
+    </footer>
+
+    <script>
+        // Load Menu from JSON
+        fetch('menu.json')
+            .then(res => res.json())
+            .then(data => {
+                const nav = document.getElementById('dynamic-menu');
+                const grid = document.getElementById('content-grid');
+                
+                // Content menu for quick access
+                data.contentMenu.forEach(item => {
+                    const a = document.createElement('a');
+                    a.className = 'nav-link';
+                    a.href = `markdown_renderer.html?file=${item.path}`;
+                    a.innerText = item.title;
+                    nav.appendChild(a);
+                });
+
+                // Main 7 Stages for the grid
+                data.mainMenu.forEach(stage => {
+                    const card = document.createElement('a');
+                    card.className = 'card stage-card';
+                    card.href = `#`; // No direct link to markdown renderer from stages as per requirements, just aesthetic for now
+                    card.innerHTML = `<h3>${stage.title}</h3><p>Explore the ${stage.path} folder content.</p>`;
+                    // Open a generic read-me for that stage
+                    card.href = `markdown_renderer.html?file=${stage.path}/README.md`;
+                    grid.appendChild(card);
+                });
+
+                checkDebugState();
+            });
+
+        // Debug mode logic
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i=0;i < ca.length;i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function toggleDebug() {
+            const current = getCookie('debug');
+            if(current === 'true') {
+                setCookie('debug', 'false', 7);
+            } else {
+                setCookie('debug', 'true', 7);
+            }
+            checkDebugState();
+        }
+
+        function checkDebugState() {
+            const debugState = getCookie('debug');
+            const debugMenu = document.getElementById('debug-menu');
+            if(debugState === 'true') {
+                debugMenu.style.display = 'block';
+                // In a real app, this might show hidden folders
+            } else {
+                debugMenu.style.display = 'none';
+            }
+        }
+
+        // Search autocomplete placeholder
+        function handleSearch() {
+            const val = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.stage-card');
+            cards.forEach(card => {
+                if(card.innerText.toLowerCase().includes(val)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
