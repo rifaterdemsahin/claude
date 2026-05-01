@@ -23,6 +23,11 @@ This folder is the **knowledge base** of the project — the step-by-step reason
 | `decisions.md` | Architecture Decision Records (ADRs) |
 | `docker_setup.md` | Qdrant + Ollama containerised setup |
 | `api_reference.md` | Key API endpoints and usage |
+| `claude_skills.md` | Explanation of Claude Skills and context window efficiency |
+| `skill_tools_and_models.md` | Guide on configuring allowed tools and models for skills |
+| `cloud_certification_workshop.md` | Google Cloud Certification workshop roadmap |
+| `learning_path.md` | Learning path documentation |
+| `pr_description_skill_showcase.md` | PR description skill showcase |
 
 ## Containerised AI Stack
 
