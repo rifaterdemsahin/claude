@@ -3,9 +3,18 @@
 ## What are Claude Skills?
 Skills in Claude Code are reusable markdown files that teach Claude how to perform a specific task or adhere to a standard. Instead of repeating instructions (like coding standards, PR review formats, or commit message guidelines) in every conversation, you define them once as a Skill. Claude automatically matches your request against available skill descriptions and loads the relevant skill on-demand.
 
-## Key Concepts
-- **On-Demand Loading**: Unlike `claude.md` which loads into every conversation and consumes context, Skills only load their full instructions when their description matches the current task.
+## Key Concepts & Context Window Efficiency
 - **Automatic Execution**: Unlike slash commands which require you to manually invoke them, Skills apply automatically when Claude recognizes the situation.
+
+### Skills vs. `claude.md`
+A critical architectural difference in Claude Code is how these two configuration methods consume your context window:
+
+| Feature | Loading Behavior | Best Used For | Context Window Impact |
+|---------|------------------|---------------|-----------------------|
+| **`claude.md`** | **Global / Always-On** | Universal project rules (e.g., "always use TypeScript strict mode"). | **High:** The entire file is loaded into the context window for *every* conversation, whether relevant or not. |
+| **Skills (`skill.md`)** | **On-Demand / Dynamic** | Task-specific knowledge (e.g., PR checklists, deployment scripts). | **Low:** Only the skill's *name and description* are loaded initially. The full file content is injected *only* when the description matches your current request. |
+
+**The Golden Rule**: Do not stuff your `claude.md` with specific workflows like debugging checklists or formatting rules. Turn those into Skills so they only load precisely when you ask for them!
 
 ## Skill Storage Locations
 Depending on who needs the skill, you store them in different locations:
