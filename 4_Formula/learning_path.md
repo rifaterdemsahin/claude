@@ -26,3 +26,9 @@ To successfully implement the 5 systems and pass the Claude Architect certificat
 - **Concept:** Extracting JSON reliably and handling failure modes.
 - **Action:** Build a pipeline that takes messy unstructured data and outputs strict JSON using tool use / function calling.
 - **Location:** `5_Symbols/5_structured_extraction/`
+
+## Official Certification Path (Anthropic Academy)
+Based on the official [Anthropic Partner Program announcement](https://youtu.be/O9yc_Qaj5Ns?si=mqflBgmgRXmwltvx) by Carl Kaden and Haley Waker:
+- The **CCAF (Claude Certified Architect - Foundations)** certification is exclusively gated behind the partner portal.
+- **The Requirement:** To unlock the CCAF certification, organizations must send **10 practitioners** through the Claude Partner Network learning path inside Anthropic Academy.
+- **The Strategy (Training → Certification → Scale):** The 5-step technical curriculum outlined above effectively reverse-engineers the necessary technical depth. By completing our open-source curriculum, you will build the "real practices" Anthropic requires to pass this certification and eventually achieve Core/Premier/Diamond partner status.
