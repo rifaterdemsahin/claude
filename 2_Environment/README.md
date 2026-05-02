@@ -21,6 +21,8 @@ This folder documents the **setup, constraints, and operating context** of the p
 | `setup_mac.md` | macOS environment setup guide |
 | `setup_windows.md` | Windows environment setup guide |
 | `setup_ai.md` | Ollama + Qdrant + AI client configuration |
+| `setup.md` | General environment and tool setup |
+| `doppler_setup.md` | Doppler secrets management guide |
 | `roadmap.md` | Project roadmap and milestones |
 | `constraints.md` | Known limitations and constraints |
 | `architecture.md` | System architecture with Mermaid diagrams |

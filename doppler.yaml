@@ -1,0 +1,11 @@
+# Doppler Configuration for delivery-pilot-template
+# Docs: https://docs.doppler.com/docs/cli
+
+setup:
+  project: delivery-pilot-template
+  config: dev
+  
+# List of secrets to sync (managed via Doppler dashboard)
+# These should NOT be defined here - use the Doppler UI/CLI
+# ANTHROPIC_API_KEY
+# FLY_API_TOKEN

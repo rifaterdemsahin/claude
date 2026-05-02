@@ -1,0 +1,30 @@
+# Environment files (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Doppler
+.doppler
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
