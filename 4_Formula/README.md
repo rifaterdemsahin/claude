@@ -28,6 +28,7 @@ This folder is the **knowledge base** of the project — the step-by-step reason
 | `cloud_certification_workshop.md` | Google Cloud Certification workshop roadmap |
 | `learning_path.md` | Learning path documentation |
 | `pr_description_skill_showcase.md` | PR description skill showcase |
+| `sop_claude_code_cloud_deploy.md` | 🚀 SOP: deploying to Fly.io from a Claude Code cloud session (blockers, fixes, procedure, live checks) |
 
 ## Containerised AI Stack
 

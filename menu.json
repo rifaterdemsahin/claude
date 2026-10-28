@@ -14,6 +14,7 @@
     { "title": "Learning Path", "path": "4_Formula/learning_path.md" },
     { "title": "Claude Skills", "path": "4_Formula/claude_skills.md" },
     { "title": "Cloud Certification", "path": "4_Formula/cloud_certification_workshop.md" },
-    { "title": "PR Description Skill", "path": "4_Formula/pr_description_skill_showcase.md" }
+    { "title": "PR Description Skill", "path": "4_Formula/pr_description_skill_showcase.md" },
+    { "title": "SOP: Cloud Deploy", "path": "4_Formula/sop_claude_code_cloud_deploy.md" }
   ]
 }
